@@ -10,7 +10,7 @@ const port = 3030;
 
 server.use("/api", apiRouter);
 
-mongoose.connect("mongodb+srv://Serena88_:12345678@@atlascluster.wmcuwgi.mongodb.net/EPICODE", {
+mongoose.connect("", {
     
    
 }).then(() => {
