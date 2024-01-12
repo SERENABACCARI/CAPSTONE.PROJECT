@@ -1,0 +1,19 @@
+{
+  "name": "capstone.project",
+  "version": "0.1.0",
+  "description": "capstone project app BBFN",
+  "main": " src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Serena",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
