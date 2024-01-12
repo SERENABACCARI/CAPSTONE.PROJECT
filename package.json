@@ -11,7 +11,8 @@
   "author": "Serena",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^8.0.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
