@@ -1,5 +1,5 @@
 //schema utenti del form contact del front//
-import mongoose,{Model,Schema} from "mongoose";
+import mongoose, { model,Schema} from "mongoose";
 
 const UserSchema = new Schema({
     nome: {
