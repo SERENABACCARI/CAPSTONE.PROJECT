@@ -2,10 +2,14 @@ import express from 'express';
 import apiRouter from '../src/apiRouter.js';
 import mongoose from 'mongoose';
 import list from "express-list-endpoints"
+import { genericError } from './middleware/genericError.js';
+
+
 
 const server = express();
 
 server.use(express.json());
+server.use(genericError)
 
 const port = 3030;
 
