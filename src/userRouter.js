@@ -9,7 +9,7 @@ userRouter.get('/', async (req, res) => {
     // res.json(user);
 });
 
-userRouter.post('/id', async (req, res) => {
+userRouter.get('/id', async (req, res) => {
     const userId = req.body.userId; // Assumi che il client passi l'ID nel corpo della richiesta
     const user = await User.findById(userId);
     res.json(user);
