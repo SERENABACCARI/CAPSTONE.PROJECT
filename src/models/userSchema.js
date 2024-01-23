@@ -2,22 +2,15 @@
 import mongoose, { model,Schema} from "mongoose";
 
 const UserSchema = new Schema({
-    nome: {
+    email: {
         type: String,
         required: true
     },
-    cognome: {
+    password: {
         type: String,
         required: true
     },
-    numeroTelefonico: {
-        type: String,
-        required: true
-    },
-    messaggio: {
-        type: String,
-        required: true
-    }
+    
 });
 
 export const User = mongoose.model("User", UserSchema);

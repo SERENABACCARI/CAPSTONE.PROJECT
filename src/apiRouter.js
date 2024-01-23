@@ -1,5 +1,7 @@
 import express from 'express';
-import userRouter from"../src/userRouter.js";
+import userRouter from"../src/routes/userRouter.js";
+
+
 
 const apiRouter= express.Router();
 
@@ -8,5 +10,7 @@ apiRouter.get('/test', (req,res)=>{
 })
 
 apiRouter.use("/users", userRouter )
+
+
 
 export default  apiRouter
