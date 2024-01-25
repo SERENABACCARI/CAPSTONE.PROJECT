@@ -4,15 +4,22 @@ import list from 'express-list-endpoints';
 import { genericError } from './middleware/genericError.js';
 import apiRouter from '../src/apiRouter.js';
 import dotenv from 'dotenv';
-
+import cors from 'cors';
 // Carica le variabili d'ambiente da .env
 dotenv.config();
 
 const server = express();
 const port = process.env.PORT || 3020;
 
+server.use(cors())
+
+
 server.use(express.json());
+
+
 server.use(genericError);
+
+
 
 server.use('/api', apiRouter);
 

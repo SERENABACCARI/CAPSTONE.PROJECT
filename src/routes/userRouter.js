@@ -40,7 +40,7 @@ const payload= { id: user.id}
 const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" }); /*JWT_SECRET*/
         
 
-res.status(200).json({message:"token"})
+res.status(200).json({userid: user._id, token: token})
 
 
 })
@@ -64,7 +64,7 @@ userRouter.get('/:id', async (req, res) => {
 });
 
 /*PUT*/
-userRouter.put('/:id', async (req, res) => {
+userRouter.put('/:id', jwtchek ,async (req, res) => {
     const user = await User.findByIdAndUpdate(req.params.id, req.boby,{new:true}); 
     res.status(200).json(user);
 });
