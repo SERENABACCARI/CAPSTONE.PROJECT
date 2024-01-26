@@ -58,10 +58,12 @@ userRouter.get('/', async (req, res) => {
 
 /*GET*/
 userRouter.get('/:id', jwtChek, async (req, res) => {                                         /*jwtChek*/
-    const user = await User.findById(req.params.id); 
-    if(!user) return res.status(404).json({ message: 'user not found' });
+    /*const user = await User.findById(req.params.id); */
+    /*if(!user) return res.status(404).json({ message: 'user not found' });*/
+
+    /*l utente è nel req.user perchè lo abbiamo inserito nel middleware*/
     
-    res.status(200).json(user);
+    res.status(200).json(req.user);
 });
 
 /*PUT*/
