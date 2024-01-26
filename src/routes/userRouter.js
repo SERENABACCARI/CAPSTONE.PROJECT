@@ -11,11 +11,13 @@ const userRouter = express.Router();
 
 userRouter.post('/', async(req,res)=>{
     const password= await bcrypt.hash(req.body.password,10)                        ///hash della password//
-    const newUser = await User.create({...req.body,password,})
-    res.status(201).json(newUser)
-})
+    const newUser = await User.create({
+        ...req.body,password,})
 
-
+        const{password_, _v,...newUserWithoutPassword}= newUser.toObject()  /*TOOBJECT RESTITUISCE L OGGETTO*/ 
+        
+        res.status(201).json(newUserWithoutPassword)
+    })
 
 /*POST LOGIN CON COMPARE*/
 /*AUTENTICAZIONE*/
