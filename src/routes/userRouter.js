@@ -2,6 +2,7 @@ import express from "express";
 import {User} from '../../src/models/userSchema.js'
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
+import jwtChek from "../middleware/jwt.js";
 
 
 const userRouter = express.Router();
@@ -56,7 +57,7 @@ userRouter.get('/', async (req, res) => {
 });
 
 /*GET*/
-userRouter.get('/:id', async (req, res) => {
+userRouter.get('/:id', jwtChek, async (req, res) => {                                         /*jwtChek*/
     const user = await User.findById(req.params.id); 
     if(!user) return res.status(404).json({ message: 'user not found' });
     
@@ -64,7 +65,7 @@ userRouter.get('/:id', async (req, res) => {
 });
 
 /*PUT*/
-userRouter.put('/:id', jwtchek ,async (req, res) => {
+userRouter.put('/:id' ,async (req, res) => {
     const user = await User.findByIdAndUpdate(req.params.id, req.boby,{new:true}); 
     res.status(200).json(user);
 });
