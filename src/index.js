@@ -5,6 +5,8 @@ import { genericError } from './middleware/genericError.js';
 import apiRouter from '../src/apiRouter.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
+/*import passport from 'passport';*/
+/*import GoogleStrategy from './middleware/Oauth/Google.js';*/
 // Carica le variabili d'ambiente da .env
 dotenv.config();
 
@@ -19,7 +21,7 @@ server.use(express.json());
 
 server.use(genericError);
 
-
+/*passport.use(GoogleStrategy)*/
 
 server.use('/api', apiRouter);
 
