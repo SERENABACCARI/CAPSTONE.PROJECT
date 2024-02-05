@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
-    "build": "exit 0"
+    "build": "exit 0",
+    "start": "nodemon src/index.js"
   },
   "author": "Serena",
   "license": "ISC",
