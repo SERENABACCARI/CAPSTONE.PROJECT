@@ -1,7 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
 
 const registerSchema = new Schema({
-    nome: {
+    name: {
         type: String,
         required: true
     },
