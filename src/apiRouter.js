@@ -1,6 +1,6 @@
 import express from 'express';
 import userRouter from"../src/routes/userRouter.js";
-/*import jwtRouter from "../src/routes/jwtRouter.js";*/
+
 import registrerRouter from "../src/routes/registrerRouter.js";
 
 
