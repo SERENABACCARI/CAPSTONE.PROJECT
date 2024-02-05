@@ -25,7 +25,7 @@ server.use(genericError);
 
 server.use('/api', apiRouter);
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URL, )
 
     .then(() => {
         server.listen(port, () => {
