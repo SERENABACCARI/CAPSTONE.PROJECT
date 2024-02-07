@@ -51,12 +51,17 @@ res.status(200).json({userid: user._id, token: token})
 
 
 
+
 /*GET*/
 userRouter.get('/', async (req, res) => {
-    const user = await User.find({})
-    res.status(201).json({ message: 'USERS LIST OK!!' });
-    
+    try {
+        const users = await User.find({});
+        res.status(200).json(users); // Restituisci l'elenco degli utenti
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' }); // Gestisci gli errori
+    }
 });
+
 
 /*GET*/
 userRouter.get('/:id', jwtChek, async (req, res) => {                                         /*jwtChek*/
