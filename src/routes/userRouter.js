@@ -75,9 +75,10 @@ userRouter.put('/:id' ,async (req, res) => {
 });
 
 /*DELETE*/
-userRouter.delete('/id', async (req, res) => {
-    const user = await User.findByIdAndDelete(req.params.id);
-    res.status(404).json({ message: 'delete' });
+userRouter.delete('/:id', async (req, res) => {
+    await User.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: 'User deleted successfully' });
 });
+
 
 export default userRouter;
